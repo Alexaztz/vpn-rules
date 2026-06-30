@@ -1,51 +1,60 @@
 # Clash / Mihomo template.
-# This is a template, not a full working profile by itself.
-# Your node subscription or subconverter output should provide proxies and proxy-groups.
+# This is a public template only. It must not contain node credentials.
+# Device-specific profiles should be generated locally and should reference these public rule providers.
 
 rule-providers:
   system-direct:
     type: http
     behavior: classical
-    path: ./ruleset/system-direct.yaml
+    format: text
+    path: ./ruleset/system-direct.list
     url: https://raw.githubusercontent.com/Alexaztz/vpn-rules/main/rules/system-direct.list
     interval: 86400
 
   direct:
     type: http
     behavior: classical
-    path: ./ruleset/direct.yaml
+    format: text
+    path: ./ruleset/direct.list
     url: https://raw.githubusercontent.com/Alexaztz/vpn-rules/main/rules/direct.list
     interval: 86400
 
   ai:
     type: http
     behavior: classical
-    path: ./ruleset/ai.yaml
+    format: text
+    path: ./ruleset/ai.list
     url: https://raw.githubusercontent.com/Alexaztz/vpn-rules/main/rules/ai.list
     interval: 86400
 
   google:
     type: http
     behavior: classical
-    path: ./ruleset/google.yaml
+    format: text
+    path: ./ruleset/google.list
     url: https://raw.githubusercontent.com/Alexaztz/vpn-rules/main/rules/google.list
     interval: 86400
 
   github:
     type: http
     behavior: classical
-    path: ./ruleset/github.yaml
+    format: text
+    path: ./ruleset/github.list
     url: https://raw.githubusercontent.com/Alexaztz/vpn-rules/main/rules/github.list
     interval: 86400
 
   streaming:
     type: http
     behavior: classical
-    path: ./ruleset/streaming.yaml
+    format: text
+    path: ./ruleset/streaming.list
     url: https://raw.githubusercontent.com/Alexaztz/vpn-rules/main/rules/streaming.list
     interval: 86400
 
 rules:
+  # Add server-specific DIRECT rules locally before the rule-set entries, for example:
+  # - IP-CIDR,YOUR_SERVER_IP/32,DIRECT,no-resolve
+
   # Prevent local/admin traffic from entering the proxy tunnel.
   - RULE-SET,system-direct,DIRECT
 
@@ -60,6 +69,9 @@ rules:
 
   # China geo rules.
   - GEOIP,CN,DIRECT
+
+  # Block QUIC when necessary so traffic falls back to TCP and remains controllable.
+  - AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
 
   # Default route. Change to DIRECT if you prefer blacklist mode.
   - MATCH,PROXY
