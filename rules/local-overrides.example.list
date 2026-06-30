@@ -1,0 +1,10 @@
+# Local private overrides example.
+# Copy this file to a private local file on your server/client and replace placeholders.
+# Do not commit real panel paths, tokens, VLESS links, UUIDs, or private keys.
+
+# VPS / management server public IP: keep DIRECT to avoid proxy loops.
+IP-CIDR,YOUR_SERVER_IP/32,no-resolve
+
+# Optional: management domains if you later put x-ui/subconverter behind a domain.
+# DOMAIN,panel.example.com
+# DOMAIN,sub.example.com
