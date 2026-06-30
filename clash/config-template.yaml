@@ -1,0 +1,65 @@
+# Clash / Mihomo template.
+# This is a template, not a full working profile by itself.
+# Your node subscription or subconverter output should provide proxies and proxy-groups.
+
+rule-providers:
+  system-direct:
+    type: http
+    behavior: classical
+    path: ./ruleset/system-direct.yaml
+    url: https://raw.githubusercontent.com/Alexaztz/vpn-rules/main/rules/system-direct.list
+    interval: 86400
+
+  direct:
+    type: http
+    behavior: classical
+    path: ./ruleset/direct.yaml
+    url: https://raw.githubusercontent.com/Alexaztz/vpn-rules/main/rules/direct.list
+    interval: 86400
+
+  ai:
+    type: http
+    behavior: classical
+    path: ./ruleset/ai.yaml
+    url: https://raw.githubusercontent.com/Alexaztz/vpn-rules/main/rules/ai.list
+    interval: 86400
+
+  google:
+    type: http
+    behavior: classical
+    path: ./ruleset/google.yaml
+    url: https://raw.githubusercontent.com/Alexaztz/vpn-rules/main/rules/google.list
+    interval: 86400
+
+  github:
+    type: http
+    behavior: classical
+    path: ./ruleset/github.yaml
+    url: https://raw.githubusercontent.com/Alexaztz/vpn-rules/main/rules/github.list
+    interval: 86400
+
+  streaming:
+    type: http
+    behavior: classical
+    path: ./ruleset/streaming.yaml
+    url: https://raw.githubusercontent.com/Alexaztz/vpn-rules/main/rules/streaming.list
+    interval: 86400
+
+rules:
+  # Prevent local/admin traffic from entering the proxy tunnel.
+  - RULE-SET,system-direct,DIRECT
+
+  # Domestic direct rules should appear before broad proxy rules.
+  - RULE-SET,direct,DIRECT
+
+  # Force proxy categories.
+  - RULE-SET,ai,PROXY
+  - RULE-SET,google,PROXY
+  - RULE-SET,github,PROXY
+  - RULE-SET,streaming,PROXY
+
+  # China geo rules.
+  - GEOIP,CN,DIRECT
+
+  # Default route. Change to DIRECT if you prefer blacklist mode.
+  - MATCH,PROXY
