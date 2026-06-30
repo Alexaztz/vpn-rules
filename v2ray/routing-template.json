@@ -1,0 +1,101 @@
+{
+  "domainStrategy": "IPIfNonMatch",
+  "rules": [
+    {
+      "type": "field",
+      "ip": [
+        "127.0.0.0/8",
+        "10.0.0.0/8",
+        "172.16.0.0/12",
+        "192.168.0.0/16",
+        "169.254.0.0/16",
+        "::1/128",
+        "fc00::/7",
+        "fe80::/10"
+      ],
+      "outboundTag": "direct"
+    },
+    {
+      "type": "field",
+      "domain": [
+        "domain:bilibili.com",
+        "domain:bilivideo.com",
+        "domain:hdslb.com",
+        "domain:jd.com",
+        "domain:360buyimg.com",
+        "domain:taobao.com",
+        "domain:tmall.com",
+        "domain:alipay.com",
+        "domain:wechat.com",
+        "domain:weixin.qq.com",
+        "domain:wx.qq.com",
+        "domain:qq.com",
+        "domain:tencent.com",
+        "domain:tencentcloud.com",
+        "domain:qcloud.com",
+        "domain:myqcloud.com",
+        "domain:cloud.tencent.com",
+        "domain:aliyun.com",
+        "domain:aliyuncs.com",
+        "domain:xiaohongshu.com",
+        "domain:xhslink.com",
+        "domain:xhscdn.com",
+        "domain:xhs.cn"
+      ],
+      "outboundTag": "direct"
+    },
+    {
+      "type": "field",
+      "domain": [
+        "domain:openai.com",
+        "domain:chatgpt.com",
+        "domain:chat.com",
+        "domain:oaistatic.com",
+        "domain:oaiusercontent.com",
+        "domain:sora.com",
+        "domain:anthropic.com",
+        "domain:claude.ai",
+        "domain:claude.com",
+        "domain:ai.google.dev",
+        "domain:aistudio.google.com",
+        "domain:gemini.google.com",
+        "domain:generativelanguage.googleapis.com",
+        "domain:google.com",
+        "domain:googleapis.com",
+        "domain:gstatic.com",
+        "domain:googleusercontent.com",
+        "domain:youtube.com",
+        "domain:youtu.be",
+        "domain:ytimg.com",
+        "domain:googlevideo.com",
+        "domain:github.com",
+        "domain:githubusercontent.com",
+        "domain:githubassets.com",
+        "domain:githubcopilot.com",
+        "domain:registry.npmjs.org",
+        "domain:notion.so",
+        "domain:notion.site",
+        "domain:notion-static.com",
+        "domain:netflix.com",
+        "domain:nflxvideo.net",
+        "domain:disneyplus.com",
+        "domain:max.com",
+        "domain:hulu.com",
+        "domain:primevideo.com",
+        "domain:twitch.tv"
+      ],
+      "outboundTag": "proxy"
+    },
+    {
+      "type": "field",
+      "ip": [
+        "geoip:cn"
+      ],
+      "outboundTag": "direct"
+    },
+    {
+      "type": "field",
+      "outboundTag": "proxy"
+    }
+  ]
+}
