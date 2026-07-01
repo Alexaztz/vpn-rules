@@ -41,6 +41,21 @@ DOMAIN-SUFFIX,xhslink.com
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,xhs.cn
 
+# Microsoft / Windows baseline services: force DIRECT
+# Keep this conservative. Do not add broad azureedge.net here, because some AI/OpenAI assets use Azure CDN domains.
+DOMAIN-SUFFIX,windows.com
+DOMAIN-SUFFIX,windowsupdate.com
+DOMAIN-SUFFIX,update.microsoft.com
+DOMAIN-SUFFIX,download.microsoft.com
+DOMAIN-SUFFIX,software-download.microsoft.com
+DOMAIN-SUFFIX,microsoft.com
+DOMAIN-SUFFIX,msftconnecttest.com
+DOMAIN-SUFFIX,msftncsi.com
+DOMAIN-SUFFIX,delivery.mp.microsoft.com
+DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com
+DOMAIN-SUFFIX,mp.microsoft.com
+DOMAIN-SUFFIX,storeedgefd.dsx.mp.microsoft.com
+
 # Common China services
 DOMAIN-SUFFIX,weibo.com
 DOMAIN-SUFFIX,sina.com.cn
