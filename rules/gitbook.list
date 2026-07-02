@@ -1,0 +1,6 @@
+# GitBook services: force PROXY
+# Format: Clash classical rule-provider entries without policy suffix.
+
+DOMAIN-SUFFIX,gitbook.com
+DOMAIN-SUFFIX,gitbook.io
+DOMAIN-SUFFIX,gitbookstatus.com
