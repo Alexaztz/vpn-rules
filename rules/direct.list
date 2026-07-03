@@ -69,6 +69,7 @@ DOMAIN,v20.events.data.microsoft.com
 DOMAIN,fd.api.iris.microsoft.com
 DOMAIN,ts3.tc.mm.bing.net
 DOMAIN,login.live.com
+DOMAIN,settings-win.data.microsoft.com
 
 # Common China services
 DOMAIN-SUFFIX,weibo.com
