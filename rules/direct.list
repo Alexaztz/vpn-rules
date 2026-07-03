@@ -41,15 +41,19 @@ DOMAIN-SUFFIX,xhslink.com
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,xhs.cn
 
-# Microsoft / Windows baseline services: force DIRECT
+# Microsoft / Windows baseline services
 # Keep this conservative. Do not add broad microsoft.com, live.com, azureedge.net or akamaized.net here.
-# Microsoft account / Outlook signup pages should fall through to PROXY.
 DOMAIN-SUFFIX,windows.com
 DOMAIN-SUFFIX,windowsupdate.com
 DOMAIN-SUFFIX,update.microsoft.com
 DOMAIN-SUFFIX,download.microsoft.com
 DOMAIN-SUFFIX,software-download.microsoft.com
 DOMAIN,www.microsoft.com
+DOMAIN-SUFFIX,apps.microsoft.com
+DOMAIN-SUFFIX,store.microsoft.com
+DOMAIN-SUFFIX,store-images.microsoft.com
+DOMAIN-SUFFIX,storequality.microsoft.com
+DOMAIN-SUFFIX,ws.microsoft.com
 DOMAIN-SUFFIX,s-microsoft.com
 DOMAIN-SUFFIX,aspnetcdn.com
 DOMAIN-SUFFIX,msftconnecttest.com
