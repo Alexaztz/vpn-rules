@@ -1,4 +1,14 @@
 # Clash / Mihomo application-level PROXY rules.
+
 # Google Antigravity desktop application.
 PROCESS-NAME,Antigravity.exe
 PROCESS-PATH-REGEX,(?i)^C:\\Users\\[^\\]+\\AppData\\Local\\Programs\\antigravity\\.*
+
+# OpenAI Codex Windows application and its bundled/runtime helpers.
+# Do not use PROCESS-NAME,ChatGPT.exe here: Codex GUI processes use that name,
+# but path scoping avoids forcing unrelated ChatGPT processes through PROXY.
+PROCESS-NAME,codex.exe
+PROCESS-NAME,codex-code-mode-host.exe
+PROCESS-PATH-REGEX,(?i)^C:\\Program Files\\WindowsApps\\OpenAI\.Codex_[^\\]+\\.*
+PROCESS-PATH-REGEX,(?i)^C:\\Users\\[^\\]+\\AppData\\Local\\OpenAI\\Codex\\.*
+PROCESS-PATH-REGEX,(?i)^C:\\Users\\[^\\]+\\\.codex\\plugins\\.*
