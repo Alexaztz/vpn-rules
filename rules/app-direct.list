@@ -1,0 +1,7 @@
+# Clash / Mihomo application-level DIRECT rules.
+# Keep these above broad domain/category proxy rules in the consuming profile.
+
+# WorkBuddy (Tencent) — force the desktop app and its bundled helpers DIRECT.
+PROCESS-NAME,WorkBuddy.exe
+PROCESS-PATH-REGEX,(?i)^C:\\Users\\[^\\]+\\AppData\\Local\\Programs\\WorkBuddy\\.*
+PROCESS-PATH-REGEX,(?i)^C:\\Users\\[^\\]+\\\.workbuddy\\.*

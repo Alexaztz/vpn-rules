@@ -34,6 +34,7 @@ Always route these categories through the proxy:
 - GitHub / GitHub Copilot
 - Notion
 - Streaming media, including YouTube, Netflix, Disney+, Max, Hulu and other overseas streaming services
+- Google Antigravity on Windows / Clash Verge TUN (application-level PROXY)
 
 ### Direct
 
@@ -45,6 +46,7 @@ Bypass the proxy for:
 - JD / Taobao / Tmall
 - Tencent Cloud / Alibaba Cloud
 - Local network and private IP ranges
+- WorkBuddy on Windows / Clash Verge TUN (application-level DIRECT)
 
 ## Security Notes
 

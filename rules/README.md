@@ -19,6 +19,8 @@ The policy target, such as `PROXY` or `DIRECT`, is not written in these files. I
 
 ## Files
 
+- `app-direct.list`: Clash/Mihomo process rules for applications that must bypass the proxy; currently WorkBuddy.
+- `app-proxy.list`: Clash/Mihomo process rules for applications that must be forced through the proxy; currently Google Antigravity.
 - `ai.list`: OpenAI, Claude, Gemini, Notion and related AI services.
 - `google.list`: Google full-service proxy rules, including YouTube domains.
 - `github.list`: GitHub, GitHub Copilot, npm and developer service domains.
@@ -30,3 +32,5 @@ The policy target, such as `PROXY` or `DIRECT`, is not written in these files. I
 ## Important
 
 Do not store credentials, VLESS links, UUIDs, tokens, or Reality private keys here.
+
+Application-level process rules must be evaluated before broad domain/category rules. In particular, `app-proxy` must precede domestic `direct`, otherwise a forced-proxy application could be captured by a domestic domain rule first.

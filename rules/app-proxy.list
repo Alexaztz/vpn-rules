@@ -1,0 +1,4 @@
+# Clash / Mihomo application-level PROXY rules.
+# Google Antigravity desktop application.
+PROCESS-NAME,Antigravity.exe
+PROCESS-PATH-REGEX,(?i)^C:\\Users\\[^\\]+\\AppData\\Local\\Programs\\antigravity\\.*

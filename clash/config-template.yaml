@@ -2,6 +2,9 @@
 # This is a public template only. It must not contain node credentials.
 # Device-specific profiles should be generated locally and should reference these public rule providers.
 
+# Force process lookup so application-level routing remains deterministic on Windows/TUN.
+find-process-mode: always
+
 rule-providers:
   system-direct:
     type: http
@@ -9,6 +12,22 @@ rule-providers:
     format: text
     path: ./ruleset/system-direct.list
     url: https://raw.githubusercontent.com/Alexaztz/vpn-rules/main/rules/system-direct.list
+    interval: 86400
+
+  app-direct:
+    type: http
+    behavior: classical
+    format: text
+    path: ./ruleset/app-direct.list
+    url: https://raw.githubusercontent.com/Alexaztz/vpn-rules/main/rules/app-direct.list
+    interval: 86400
+
+  app-proxy:
+    type: http
+    behavior: classical
+    format: text
+    path: ./ruleset/app-proxy.list
+    url: https://raw.githubusercontent.com/Alexaztz/vpn-rules/main/rules/app-proxy.list
     interval: 86400
 
   direct:
@@ -57,6 +76,10 @@ rules:
 
   # Prevent local/admin traffic from entering the proxy tunnel.
   - RULE-SET,system-direct,DIRECT
+
+  # Explicit per-application routing. These must precede broad domain/category rules.
+  - RULE-SET,app-direct,DIRECT
+  - RULE-SET,app-proxy,PROXY
 
   # Domestic direct rules should appear before broad proxy rules.
   - RULE-SET,direct,DIRECT
