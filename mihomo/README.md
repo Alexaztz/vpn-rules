@@ -60,7 +60,7 @@ GEOIP CN      -> DIRECT
 final         -> PROXY
 ```
 
-This ensures WorkBuddy remains direct under TUN while Google Antigravity and OpenAI Codex are forced through the proxy before a domestic-domain rule can short-circuit them.
+This ensures WorkBuddy remains direct under TUN while Google Antigravity and OpenAI Codex / ChatGPT are forced through the proxy before a domestic-domain rule can short-circuit them.
 
 ## Rule update model
 

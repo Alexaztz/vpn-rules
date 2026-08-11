@@ -34,7 +34,7 @@ Always route these categories through the proxy:
 - GitHub / GitHub Copilot
 - Notion
 - Streaming media, including YouTube, Netflix, Disney+, Max, Hulu and other overseas streaming services
-- Google Antigravity and OpenAI Codex on Windows / Clash Verge TUN (application-level PROXY)
+- Google Antigravity and OpenAI Codex / ChatGPT on Windows / Clash Verge TUN (application-level PROXY)
 
 ### Direct
 

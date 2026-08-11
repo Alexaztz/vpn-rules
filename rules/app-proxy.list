@@ -4,11 +4,11 @@
 PROCESS-NAME,Antigravity.exe
 PROCESS-PATH-REGEX,(?i)^C:\\Users\\[^\\]+\\AppData\\Local\\Programs\\antigravity\\.*
 
-# OpenAI Codex Windows application and its bundled/runtime helpers.
-# Do not use PROCESS-NAME,ChatGPT.exe here: Codex GUI processes use that name,
-# but path scoping avoids forcing unrelated ChatGPT processes through PROXY.
+# OpenAI Codex / ChatGPT Windows application and all related helpers.
+# Codex GUI processes may appear as ChatGPT.exe; both product names are forced through PROXY.
+PROCESS-NAME,ChatGPT.exe
 PROCESS-NAME,codex.exe
 PROCESS-NAME,codex-code-mode-host.exe
-PROCESS-PATH-REGEX,(?i)^C:\\Program Files\\WindowsApps\\OpenAI\.Codex_[^\\]+\\.*
-PROCESS-PATH-REGEX,(?i)^C:\\Users\\[^\\]+\\AppData\\Local\\OpenAI\\Codex\\.*
-PROCESS-PATH-REGEX,(?i)^C:\\Users\\[^\\]+\\\.codex\\plugins\\.*
+PROCESS-PATH-REGEX,(?i)^C:\\Program Files\\WindowsApps\\OpenAI\.(Codex|ChatGPT)_[^\\]+\\.*
+PROCESS-PATH-REGEX,(?i)^C:\\Users\\[^\\]+\\AppData\\Local\\OpenAI\\(Codex|ChatGPT)\\.*
+PROCESS-PATH-REGEX,(?i)^C:\\Users\\[^\\]+\\\.(codex|chatgpt)\\.*
